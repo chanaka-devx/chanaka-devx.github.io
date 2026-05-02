@@ -11,7 +11,7 @@ const education = [
     institution: "Self-Directed Learning",
     degree: "Ongoing Learning",
     period: "Ongoing",
-    details: ["Functionalities of neural networks and basic ML algorithms.", "Understanding web vulnerabilities, secure coding practices, and encryption."]
+    details: ["Functionalities of neural networks and Generative AI.", "Understanding web vulnerabilities, secure coding practices, and encryption."]
   }
 ];
 
