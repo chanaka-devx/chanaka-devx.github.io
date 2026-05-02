@@ -1,52 +1,54 @@
-
+import { motion } from 'framer-motion';
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-background-light dark:bg-background-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row gap-12 items-start">
-          <div className="w-full md:w-1/2">
-            <h2 className="text-3xl font-bold text-primary-text-light dark:text-primary-text-dark mb-6 flex items-center">
-              <span className="text-primary mr-2">01.</span> About Me
-            </h2>
-            <div className="space-y-4 text-secondary-text-light dark:text-secondary-text-dark leading-relaxed">
-              <p>
-                I am an aspiring AI and Machine Learning engineer with a strong interest in understanding how intelligent systems learn from data and make decisions. My journey in technology is driven by curiosity, experimentation, and a desire to build meaningful, data-driven solutions.
-              </p>
-              <p>
-                Currently, I am focused on developing a solid foundation in machine learning concepts and exploring how AI can be applied to real-world problems. I enjoy working with modern tools and frameworks to experiment, learn, and translate ideas into practical applications.
-              </p>
-              <p>
-                Currently, I am focused on developing a solid foundation in machine learning concepts and exploring how AI can be applied to real-world problems. I enjoy working with modern tools and frameworks to experiment, learn, and translate ideas into practical applications.
-              </p>
-            </div>
+    <section id="about" className="py-32 bg-background-light dark:bg-background-dark relative overflow-hidden flex justify-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-8"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-xs font-semibold text-primary-text-light dark:text-primary-text-dark tracking-widest">
+            <span>001</span>
+            <span className="w-1 h-1 rounded-full bg-primary-text-light/30 dark:bg-primary-text-dark/30"></span>
+            <span>WHO I AM</span>
           </div>
-          
-          <div className="w-full md:w-1/2 flex justify-center">
-            {/* Placeholder for an image or graphic if needed in future, keeping it minimal text-only or code-snippet styled for now as per minimal requirement, 
-                but let's add a tech-themed decorative element. */}
-            <div className="relative w-full max-w-sm">
-                <div className="absolute top-0 -left-4 w-full h-full border-2 border-primary rounded translate-x-4 translate-y-4 z-0"></div>
-                <div className="relative z-10 bg-card-light dark:bg-card-dark p-6 rounded shadow-lg border border-gray-100 dark:border-gray-800">
-                    <pre className="text-xs sm:text-sm font-mono text-secondary-text-light dark:text-secondary-text-dark overflow-x-auto">
-{`{
-  "role": "Software Developer",
-  "focus": [
-    "Backend Systems",
-    "Cloud Architecture",
-    "AI Fundamentals"
-  ],
-  "traits": [
-    "Problem Solver",
-    "Continuous Learner",
-    "Clean Code Enthusiast"
-  ]
-}`}
-                    </pre>
-                </div>
-            </div>
-          </div>
-        </div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ delay: 0.1 }}
+          className="w-full"
+        >
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium leading-tight md:leading-tight lg:leading-tight tracking-tight">
+            <span className="text-primary-text-light dark:text-primary-text-dark">I am an aspiring AI and Machine Learning engineer </span>
+            <span className="text-black/20 dark:text-white/20">with a strong interest in understanding how intelligent systems learn from data and make decisions. My journey in technology is driven by curiosity, experimentation, and a desire to build meaningful, data-driven solutions.</span>
+          </h2>
+        </motion.div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ delay: 0.2 }}
+          className="mt-12"
+        >
+          <button
+            onClick={() => {
+              const element = document.getElementById('contact');
+              if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="px-8 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition-transform"
+          >
+            Get In Touch
+          </button>
+        </motion.div>
+
       </div>
     </section>
   );

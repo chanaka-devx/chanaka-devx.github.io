@@ -15,13 +15,40 @@
   }
 }
 
+@layer utilities {
+  .glass-pill {
+    @apply rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 backdrop-blur-md;
+  }
+
+  .mask-image-fade {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .glass-nav {
+    @apply bg-white/70 dark:bg-[#0A0A0A]/70 backdrop-blur-xl border-b border-black/5 dark:border-white/5;
+  }
+  
+  .glass-card {
+    @apply bg-card-light dark:bg-card-dark backdrop-blur-xl border border-cardBorder-light dark:border-cardBorder-dark;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-gradientStart to-primary-gradientEnd;
+  }
+  
+  .bg-gradient-conicorn {
+    @apply bg-gradient-to-r from-primary-gradientStart to-primary-gradientEnd;
+  }
+}
+
 /* Custom scrollbar for a cleaner look */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-background-light dark:bg-background-dark;
+  @apply bg-transparent;
 }
 
 ::-webkit-scrollbar-thumb {

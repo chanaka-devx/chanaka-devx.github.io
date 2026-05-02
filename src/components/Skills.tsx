@@ -1,35 +1,80 @@
+import { motion } from 'framer-motion';
 
+const skillsRow1 = [
+  { name: "TypeScript", slug: "typescript" },
+  { name: "JavaScript", slug: "javascript" },
+  { name: "Python", slug: "python" },
+  { name: "Java", slug: "java" },
+  { name: "SQL", slug: "mysql" },
+  { name: "Dart", slug: "dart" },
+  { name: "React", slug: "react" },
+  { name: "Express.js", slug: "express" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "Flutter", slug: "flutter" },
+  { name: "Tailwind CSS", slug: "tailwindcss" }
+];
 
-const skills = {
-  "Languages": ["TypeScript", "JavaScript", "Python", "Java", "SQL", "Dart"],
-  "Frameworks": ["React", "Express.js", "Node.js", "Flutter", "Tailwind CSS"],
-  "Tools": ["Git", "Docker", "Postman", "VS Code", "Firebase"],
-  "Concepts": ["REST APIs", "MVC Architecture", "OOP", "Data Structures", "Auth"]
-};
+const skillsRow2 = [
+  { name: "Git", slug: "git" },
+  { name: "Docker", slug: "docker" },
+  { name: "Postman", slug: "postman" },
+  { name: "VS Code", slug: "visualstudiocode" },
+  { name: "Firebase", slug: "firebase" },
+  { name: "REST APIs", slug: "fastapi" }, // approximation
+  { name: "Figma", slug: "figma" },
+  { name: "Linux", slug: "linux" },
+  { name: "AWS", slug: "amazonaws" },
+  { name: "Vercel", slug: "vercel" }
+];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 bg-background-light dark:bg-background-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-primary-text-light dark:text-primary-text-dark mb-12 flex items-center">
-          <span className="text-primary mr-2">02.</span> Technical Skills
-        </h2>
+    <section id="skills" className="py-32 bg-background-light dark:bg-background-dark relative overflow-hidden flex flex-col items-center">
+      
+      <div className="w-full relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-16 px-4 flex flex-col items-center"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-xs font-semibold text-primary-text-light dark:text-primary-text-dark tracking-widest mb-8">
+            <span>002</span>
+            <span className="w-1 h-1 rounded-full bg-primary-text-light/30 dark:bg-primary-text-dark/30"></span>
+            <span>TECHNOLOGY ECOSYSTEM</span>
+          </div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {Object.entries(skills).map(([category, items]) => (
-            <div key={category} className="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-colors duration-300">
-              <h3 className="text-xl font-semibold text-primary mb-4">{category}</h3>
-              <ul className="space-y-2">
-                {items.map((skill) => (
-                  <li key={skill} className="flex items-center text-secondary-text-light dark:text-secondary-text-dark">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3 text-xs opacity-70"></span>
-                    {skill}
-                  </li>
+        {/* Marquee Row 1 */}
+        <div className="flex overflow-hidden group w-full mb-6 mask-image-fade">
+            <div className="flex animate-marquee gap-6 min-w-max pr-6 group-hover:[animation-play-state:paused]">
+                {[...skillsRow1, ...skillsRow1, ...skillsRow1].map((skill, idx) => (
+                    <div 
+                        key={`${skill.name}-${idx}`} 
+                        className="flex-none px-6 py-4 rounded-full bg-white dark:bg-[#111111] border border-black/10 dark:border-white/10 hover:shadow-lg text-primary-text-light dark:text-primary-text-dark text-lg font-medium transition-all duration-300 flex items-center justify-center min-w-[180px] gap-3"
+                    >
+                        <img src={`https://cdn.simpleicons.org/${skill.slug}`} alt={skill.name} className="w-6 h-6 dark:invert" />
+                        {skill.name}
+                    </div>
                 ))}
-              </ul>
             </div>
-          ))}
         </div>
+
+        {/* Marquee Row 2 (Reverse) */}
+        <div className="flex overflow-hidden group w-full mask-image-fade">
+            <div className="flex animate-marquee-reverse gap-6 min-w-max pr-6 group-hover:[animation-play-state:paused]">
+                {[...skillsRow2, ...skillsRow2, ...skillsRow2].map((skill, idx) => (
+                    <div 
+                        key={`${skill.name}-${idx}`} 
+                        className="flex-none px-6 py-4 rounded-full bg-white dark:bg-[#111111] border border-black/10 dark:border-white/10 hover:shadow-lg text-primary-text-light dark:text-primary-text-dark text-lg font-medium transition-all duration-300 flex items-center justify-center min-w-[180px] gap-3"
+                    >
+                        <img src={`https://cdn.simpleicons.org/${skill.slug}`} alt={skill.name} className="w-6 h-6 dark:invert" />
+                        {skill.name}
+                    </div>
+                ))}
+            </div>
+        </div>
+
       </div>
     </section>
   );
