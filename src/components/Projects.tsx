@@ -22,7 +22,7 @@ const projects = [
     problem: "Retrieving accurate answers from large, domain-specific document corpora is difficult with traditional keyword-based search.",
     solution: "Built a Retrieval-Augmented Generation (RAG) pipeline using LangChain, FAISS, and Gemini for context-grounded answer generation.",
     tech: ["Python", "LangChain", "Gemini API", "Hugging Face"],
-    links: { github: "#", live: "#" },
+    links: { github: "https://github.com/chanaka-devx/Document-QA-system", live: "#" },
     dark: false
   },
   {
@@ -40,7 +40,7 @@ const projects = [
     problem: "Manually identifying suspicious activity in vast AIS location data is inefficient and prone to missing critical security threats.",
     solution: "Developed a real-time monitoring system that flags anomalies and provides a robust RBAC dashboard for maritime security operators.",
     tech: ["Python", "React", "Node.js", "PostgreSQL"],
-    links: { github: "#", live: "#" },
+    links: { github: "https://github.com/ramishka-devx/maritime-surveillance-software", live: "#" },
     dark: true
   },
   {
@@ -49,7 +49,7 @@ const projects = [
     problem: "Manual deployment and infrastructure provisioning are inconsistent and slow down the development lifecycle for modern apps.",
     solution: "Automated end-to-end deployment with a Jenkins CI/CD pipeline and provisioned cloud resources using Terraform and Ansible.",
     tech: ["Docker", "Jenkins", "Terraform", "Ansible"],
-    links: { github: "#", live: "#" },
+    links: { github: "https://github.com/chanaka-devx/task-manager", live: "#" },
     dark: false
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     problem: "Managing vehicle availability and rental bookings manually through spreadsheets is inefficient and prone to double-booking.",
     solution: "Built a full-stack car rental platform with a normalized MySQL database and a robust admin dashboard for seamless CRUD operations.",
     tech: ["React", "Node.js", "MySQL", "Express"],
-    links: { github: "#", live: "#" },
+    links: { github: "https://github.com/chanaka-devx/Car-Rental", live: "#" },
     dark: true
   },
   {
@@ -67,7 +67,7 @@ const projects = [
     problem: "Most learning apps lack engaging, real-time quiz experiences with instant feedback and progress tracking for users.",
     solution: "Developed a Flutter-based mobile app featuring timer-based evaluation workflows and a unified Firebase backend.",
     tech: ["Flutter", "Firebase", "Dart"],
-    links: { github: "#", live: "#" },
+    links: { github: "https://github.com/chanaka-devx/Quiz-app", live: "#" },
     dark: false
   },
   {
@@ -76,7 +76,7 @@ const projects = [
     problem: "Patients often forget to take medication on time, leading to poor adherence and potential health risks for chronic conditions.",
     solution: "Engineered a smart reminder app integrated with IoT hardware to automate adherence tracking, showcased at ReXtro 2025.",
     tech: ["Flutter", "IoT", "Firebase", "Dart"],
-    links: { github: "#", live: "#" },
+    links: { github: "https://github.com/chanaka-devx/medibox", live: "#" },
     dark: true
   }
 ];
