@@ -5,26 +5,39 @@ const skillsRow1 = [
   { name: "JavaScript", slug: "javascript" },
   { name: "Python", slug: "python" },
   { name: "Java", slug: "java" },
-  { name: "SQL", slug: "mysql" },
-  { name: "Dart", slug: "dart" },
   { name: "React", slug: "react" },
-  { name: "Express.js", slug: "express" },
+  { name: "Next.js", slug: "nextdotjs" },
   { name: "Node.js", slug: "nodedotjs" },
   { name: "Flutter", slug: "flutter" },
-  { name: "Tailwind CSS", slug: "tailwindcss" }
+  { name: "Dart", slug: "dart" },
+  { name: "MySQL", slug: "mysql" },
+  { name: "MongoDB", slug: "mongodb" }
 ];
 
 const skillsRow2 = [
-  { name: "Git", slug: "git" },
+  { name: "TensorFlow", slug: "tensorflow" },
+  { name: "PyTorch", slug: "pytorch" },
+  { name: "Scikit-Learn", slug: "scikitlearn" },
+  { name: "Keras", slug: "keras" },
+  { name: "Hugging Face", slug: "huggingface" },
+  { name: "OpenAI", slug: "openai" },
+  { name: "Google Gemini", slug: "googlegemini" },
+  { name: "LangChain", slug: "langchain" },
+  { name: "Pandas", slug: "pandas" },
+  { name: "NumPy", slug: "numpy" }
+];
+
+const skillsRow3 = [
   { name: "Docker", slug: "docker" },
-  { name: "Postman", slug: "postman" },
-  { name: "VS Code", slug: "visualstudiocode" },
+  { name: "Terraform", slug: "terraform" },
+  { name: "Jenkins", slug: "jenkins" },
+  { name: "Ansible", slug: "ansible" },
+  { name: "AWS", slug: "amazonwebservices" },
   { name: "Firebase", slug: "firebase" },
-  { name: "REST APIs", slug: "fastapi" }, // approximation
-  { name: "Figma", slug: "figma" },
   { name: "Linux", slug: "linux" },
-  { name: "AWS", slug: "amazonaws" },
-  { name: "Vercel", slug: "vercel" }
+  { name: "Git", slug: "git" },
+  { name: "VS Code", slug: "visualstudiocode" },
+  { name: "Figma", slug: "figma" }
 ];
 
 export default function Skills() {
@@ -61,9 +74,24 @@ export default function Skills() {
         </div>
 
         {/* Marquee Row 2 (Reverse) */}
-        <div className="flex overflow-hidden group w-full mask-image-fade">
+        <div className="flex overflow-hidden group w-full mb-6 mask-image-fade">
             <div className="flex animate-marquee-reverse gap-6 min-w-max pr-6 group-hover:[animation-play-state:paused]">
                 {[...skillsRow2, ...skillsRow2, ...skillsRow2].map((skill, idx) => (
+                    <div 
+                        key={`${skill.name}-${idx}`} 
+                        className="flex-none px-6 py-4 rounded-full bg-white dark:bg-[#111111] border border-black/10 dark:border-white/10 hover:shadow-lg text-primary-text-light dark:text-primary-text-dark text-lg font-medium transition-all duration-300 flex items-center justify-center min-w-[180px] gap-3"
+                    >
+                        <img src={`https://cdn.simpleicons.org/${skill.slug}`} alt={skill.name} className="w-6 h-6 dark:invert" />
+                        {skill.name}
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        {/* Marquee Row 3 */}
+        <div className="flex overflow-hidden group w-full mask-image-fade">
+            <div className="flex animate-marquee gap-6 min-w-max pr-6 group-hover:[animation-play-state:paused]">
+                {[...skillsRow3, ...skillsRow3, ...skillsRow3].map((skill, idx) => (
                     <div 
                         key={`${skill.name}-${idx}`} 
                         className="flex-none px-6 py-4 rounded-full bg-white dark:bg-[#111111] border border-black/10 dark:border-white/10 hover:shadow-lg text-primary-text-light dark:text-primary-text-dark text-lg font-medium transition-all duration-300 flex items-center justify-center min-w-[180px] gap-3"

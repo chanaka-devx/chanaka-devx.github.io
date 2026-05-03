@@ -40,7 +40,10 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="relative overflow-hidden bg-black text-white pt-24 pb-12">
+    <footer id="contact" className="relative overflow-hidden bg-background-light dark:bg-background-dark text-white pt-24 pb-12">
+      
+      {/* Background Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background-light dark:from-background-dark to-black z-[1] pointer-events-none" />
       
       {/* Background Video */}
       <video 
@@ -52,7 +55,7 @@ export default function Footer() {
       >
         <source src="https://cdn.prod.website-files.com/69abbb96278770785e4b2dc1%2F69b0d1d271397d4fd4227e2d_Footer%20Video_mp4.mp4" type="video/mp4" />
         <source src="https://cdn.prod.website-files.com/69abbb96278770785e4b2dc1%2F69b0d1d271397d4fd4227e2d_Footer%20Video_webm.webm" type="video/webm" />
-        <div className="absolute inset-0 bg-[#111111]"></div>
+        <div className="absolute inset-0 bg-black"></div>
       </video>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
@@ -62,7 +65,7 @@ export default function Footer() {
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative group mb-32 w-full max-w-3xl"
+          className="relative group mb-32 w-3xl max-w-3xl"
         >
           {/* Bottom Outer Glow */}
           <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-32 bg-white/20 blur-[100px] rounded-full opacity-50 pointer-events-none"></div>
@@ -122,9 +125,9 @@ export default function Footer() {
         <div className="w-full flex flex-wrap items-center justify-center gap-x-16 gap-y-8 mb-16 pt-16 border-t border-white/10">
           {[
             { label: 'LinkedIn', type: 'linkedin', href: 'https://www.linkedin.com/in/chanaka-madhuranga-' },
+            { label: 'GitHub', type: 'github', href: 'https://github.com/chanaka-devx' },
             { label: 'Instagram', type: 'instagram', href: 'https://instagram.com' },
-            { label: 'Facebook', type: 'facebook', href: 'https://facebook.com' },
-            { label: 'GitHub', type: 'github', href: 'https://github.com/chanaka-devx' }
+            { label: 'Facebook', type: 'facebook', href: 'https://facebook.com' }
           ].map((social) => (
             <a 
               key={social.label}

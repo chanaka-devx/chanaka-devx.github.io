@@ -38,7 +38,7 @@ export default function Education() {
         
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-black/10 dark:bg-white/10 md:-translate-x-1/2"></div>
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-black/10 dark:bg-white/10 -translate-x-1/2"></div>
           
           <div className="space-y-16">
             {education.map((item, idx) => (
@@ -51,13 +51,13 @@ export default function Education() {
                 className={`relative flex flex-col md:flex-row gap-8 items-center ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
                 {/* Center Node */}
-                <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-black dark:bg-white border-4 border-white dark:border-[#111111] -translate-x-1/2 z-10 shadow-sm"></div>
+                <div className="absolute left-1/2 w-4 h-4 rounded-full bg-black dark:bg-white border-4 border-white dark:border-[#111111] -translate-x-1/2 z-10 shadow-sm"></div>
                 
                 {/* Content Card - Left or Right */}
-                <div className={`ml-20 md:ml-0 w-full md:w-[calc(50%-3rem)] flex ${idx % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
-                  <div className="w-full bg-[#f8f8f8] dark:bg-[#1a1a1a] p-8 md:p-10 rounded-[32px] hover:-translate-y-2 transition-transform duration-300 border border-black/5 dark:border-white/5 shadow-sm group">
-                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
-                        <div className="flex items-center gap-4">
+                <div className={`mt-10 md:mt-0 w-full md:w-[calc(50%-3rem)] flex ${idx % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
+                  <div className="w-full bg-[#f8f8f8] dark:bg-[#1a1a1a] p-8 md:p-10 rounded-[32px] hover:-translate-y-2 transition-transform duration-300 border border-black/5 dark:border-white/5 shadow-sm group text-center md:text-left">
+                    <div className="flex flex-col md:flex-row items-center md:items-center justify-between mb-6 gap-4">
+                        <div className="flex flex-col md:flex-row items-center gap-4">
                             <div className="w-12 h-12 rounded-full bg-white dark:bg-[#222222] shadow-sm flex items-center justify-center font-bold text-lg border border-black/5 dark:border-white/5">
                                 {idx + 1}
                             </div>
@@ -74,10 +74,10 @@ export default function Education() {
                       {item.institution}
                     </h4>
                     
-                    <ul className="space-y-3 text-primary-text-light/80 dark:text-primary-text-dark/80">
+                    <ul className="space-y-3 text-primary-text-light/80 dark:text-primary-text-dark/80 flex flex-col items-center md:items-start">
                       {item.details.map((detail, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <span className="w-1.5 h-1.5 rounded-full bg-black/30 dark:bg-white/30 mt-2 shrink-0 group-hover:bg-black dark:group-hover:bg-white transition-colors"></span>
+                        <li key={i} className="flex items-center md:items-start gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-black/30 dark:bg-white/30 shrink-0 group-hover:bg-black dark:group-hover:bg-white transition-colors mt-0 md:mt-2"></span>
                           <span className="leading-relaxed">{detail}</span>
                         </li>
                       ))}
