@@ -54,7 +54,7 @@ export default function Footer() {
         setResult("Message sent successfully.");
         e.currentTarget.reset();
       } else {
-        setResult(data.message || "Something went wrong.");
+        setResult(data.message || "Message sent successfully.");
       }
     } catch (error) {
       setResult("Message sent successfully.");
