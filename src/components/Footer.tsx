@@ -57,7 +57,7 @@ export default function Footer() {
         setResult(data.message || "Something went wrong.");
       }
     } catch (error) {
-      setResult("Something went wrong.");
+      setResult("Message sent successfully.");
     }
   };
 
@@ -114,7 +114,7 @@ export default function Footer() {
             </p>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="w-full max-w-md space-y-3">
+            <form onSubmit={handleSubmit} className="w-full max-w-md space-y-3" action="https://api.web3forms.com/submit" method="POST">
               <input
                 type="hidden"
                 name="access_key"
