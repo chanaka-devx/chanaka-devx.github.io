@@ -1,4 +1,4 @@
-import type { FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -34,10 +34,34 @@ const SocialIcon = ({ type }: { type: string }) => {
 };
 
 export default function Footer() {
-  const handleSubmit = (e: FormEvent) => {
+  const [result, setResult] = useState<string>("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert("Message sent! (Mock implementation)");
+    setResult("Sending...");
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Message sent successfully.");
+        e.currentTarget.reset();
+      } else {
+        setResult(data.message || "Something went wrong.");
+      }
+    } catch (error) {
+      setResult("Something went wrong.");
+    }
   };
+
+  
 
   return (
     <footer id="contact" className="relative overflow-hidden bg-background-light dark:bg-background-dark text-white pt-24 pb-12">
@@ -91,20 +115,28 @@ export default function Footer() {
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="w-full max-w-md space-y-3">
+              <input
+                type="hidden"
+                name="access_key"
+                value="6471f776-e3dc-40e7-9e65-b0b79eeaa19a"
+              />
               <input 
                 type="text" 
+                name="name"
                 placeholder="Your name*"
                 className="w-full px-6 py-4 rounded-2xl bg-black/30 border border-white/5 focus:bg-black/50 focus:border-white/10 outline-none transition-all text-white placeholder:text-white/20 text-sm font-medium" 
                 required 
               />
               <input 
                 type="email" 
+                name="email"
                 placeholder="Email*"
                 className="w-full px-6 py-4 rounded-2xl bg-black/30 border border-white/5 focus:bg-black/50 focus:border-white/10 outline-none transition-all text-white placeholder:text-white/20 text-sm font-medium" 
                 required 
               />
               <textarea 
                 rows={4} 
+                name="message"
                 placeholder="Message"
                 className="w-full px-6 py-4 rounded-2xl bg-black/30 border border-white/5 focus:bg-black/50 focus:border-white/10 outline-none transition-all text-white placeholder:text-white/20 text-sm font-medium resize-none" 
               ></textarea>
@@ -116,6 +148,11 @@ export default function Footer() {
                 >
                   Send
                 </button>
+                {result && (
+                  <p className="mt-4 text-sm text-white/60 animate-pulse">
+                    {result}
+                  </p>
+                )}
               </div>
             </form>
           </div>
