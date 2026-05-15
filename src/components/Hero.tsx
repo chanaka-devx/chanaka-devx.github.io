@@ -37,12 +37,12 @@ export default function Hero() {
           </motion.div>
 
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-primary-text-light dark:text-primary-text-dark leading-[1.1]">
-            <span className="block">AI & Machine</span>
-            <span className="text-gradient">Learning Enthusiast</span>
+            <span className="block">Aspiring Software</span>
+            <span className="text-gradient">Engineer & AI Enthusiast</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-secondary-text-light dark:text-secondary-text-dark max-w-2xl font-light">
-            Learning and applying machine learning concepts through real-world projects to build intelligent systems.
+            Building robust, scalable applications with a focus on modern web technologies and intelligent systems.
           </p>
           
           <motion.div 

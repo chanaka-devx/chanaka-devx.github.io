@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { useRef } from 'react';
 
-const paragraph = "I am an aspiring AI and Machine Learning engineer with a strong interest in understanding how intelligent systems learn from data and make decisions. My journey in technology is driven by curiosity, experimentation, and a desire to build meaningful, data-driven solutions.";
+const paragraph = "I am an aspiring Software Engineer with a passion for building robust, scalable, and user-centric applications. My journey is focused on mastering modern web development and AI/Machine Learning to build intelligent, data-driven solutions for real-world challenges.";
 
 export default function About() {
   const container = useRef<HTMLDivElement>(null);
