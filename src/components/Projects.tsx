@@ -10,7 +10,7 @@ const projects = [
   {
     title: "Fast EMI Prediction",
     subtitle: "Physics-Aware Generative AI",
-    problem: "Predicting Electromagnetic Interference (EMI) for hardware designs usually requires slow, computationally expensive simulations (IEEE IES Generative AI Challenge 2026).",
+    image: "/Resources/emi.png",
     solution: "Designed a physics-informed generative AI surrogate model that enables real-time risk visualization and automated quality metrics.",
     tech: ["GenAI", "LLMs", "Surrogate Modeling", "Python"],
     links: { github: "#", live: "#" },
@@ -19,8 +19,8 @@ const projects = [
   {
     title: "Document Q&A System",
     subtitle: "RAG Pipeline Development",
-    problem: "Retrieving accurate answers from large, domain-specific document corpora is difficult with traditional keyword-based search.",
-    solution: "Built a Retrieval-Augmented Generation (RAG) pipeline using LangChain, FAISS, and Gemini for context-grounded answer generation.",
+    image: "/Resources/document.jpg",
+    solution: "Built a Retrieval-Augmented Generation (RAG) pipeline using LangChain and Gemini for context-grounded answer generation.",
     tech: ["Python", "LangChain", "Gemini API", "Hugging Face"],
     links: { github: "https://github.com/chanaka-devx/Document-QA-system", live: "#" },
     dark: false
@@ -28,7 +28,7 @@ const projects = [
   {
     title: "Air Quality Prediction",
     subtitle: "Multivariate LSTM Modeling",
-    problem: "Forecasting air pollution levels from complex sensor data requires capturing complex long-term temporal dependencies.",
+    image: "/Resources/air.png",
     solution: "Trained a multivariate LSTM neural network with an end-to-end preprocessing pipeline to accurately predict trends and inform analytics.",
     tech: ["TensorFlow", "Keras", "Scikit-learn", "LSTM"],
     links: { github: "#", live: "#" },
@@ -37,16 +37,16 @@ const projects = [
   {
     title: "SerenGuard",
     subtitle: "Maritime Surveillance Software",
-    problem: "Manually identifying suspicious activity in vast AIS location data is inefficient and prone to missing critical security threats.",
+    image: "/Resources/maritime.png",
     solution: "Developed a real-time monitoring system that flags anomalies and provides a robust RBAC dashboard for maritime security operators.",
     tech: ["Python", "React", "Node.js", "PostgreSQL"],
     links: { github: "https://github.com/ramishka-devx/maritime-surveillance-software", live: "#" },
     dark: true
   },
   {
-    title: "Task Manager",
-    subtitle: "DevOps CI/CD Application",
-    problem: "Manual deployment and infrastructure provisioning are inconsistent and slow down the development lifecycle for modern apps.",
+    title: "Nora",
+    subtitle: "Task Manager Application with Automated pipeline",
+    image: "/Resources/task manager.png",
     solution: "Automated end-to-end deployment with a Jenkins CI/CD pipeline and provisioned cloud resources using Terraform and Ansible.",
     tech: ["Docker", "Jenkins", "Terraform", "Ansible"],
     links: { github: "https://github.com/chanaka-devx/task-manager", live: "#" },
@@ -55,7 +55,7 @@ const projects = [
   {
     title: "RentRide",
     subtitle: "Car Rental Web Application",
-    problem: "Managing vehicle availability and rental bookings manually through spreadsheets is inefficient and prone to double-booking.",
+    image: "/Resources/car rental.png",
     solution: "Built a full-stack car rental platform with a normalized MySQL database and a robust admin dashboard for seamless CRUD operations.",
     tech: ["React", "Node.js", "MySQL", "Express"],
     links: { github: "https://github.com/chanaka-devx/Car-Rental", live: "#" },
@@ -64,7 +64,7 @@ const projects = [
   {
     title: "Quizzy",
     subtitle: "Quiz Mobile Application",
-    problem: "Most learning apps lack engaging, real-time quiz experiences with instant feedback and progress tracking for users.",
+    image: "/Resources/quiz.jpg",
     solution: "Developed a Flutter-based mobile app featuring timer-based evaluation workflows and a unified Firebase backend.",
     tech: ["Flutter", "Firebase", "Dart"],
     links: { github: "https://github.com/chanaka-devx/Quiz-app", live: "#" },
@@ -73,7 +73,7 @@ const projects = [
   {
     title: "MedBox",
     subtitle: "Smart Medication Reminder",
-    problem: "Patients often forget to take medication on time, leading to poor adherence and potential health risks for chronic conditions.",
+    image: "/Resources/medibox.jpg",
     solution: "Engineered a smart reminder app integrated with IoT hardware to automate adherence tracking, showcased at ReXtro 2025.",
     tech: ["Flutter", "IoT", "Firebase", "Dart"],
     links: { github: "https://github.com/chanaka-devx/medibox", live: "#" },
@@ -132,11 +132,16 @@ export default function Projects() {
                 
                 <div className="relative z-10">
                   <div className="mb-8">
+                      <div className="relative w-full aspect-video mb-8 overflow-hidden rounded-[24px]">
+                        <img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      </div>
                       <p className="text-xl md:text-2xl font-medium leading-relaxed mb-6">
                         "{project.solution}"
-                      </p>
-                      <p className={`font-light leading-relaxed ${project.dark ? 'text-white/60' : 'text-black/60 dark:text-white/60'}`}>
-                        {project.problem}
                       </p>
                   </div>
                   
