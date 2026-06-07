@@ -31,7 +31,7 @@ const projects = [
     image: "/Resources/air.png",
     solution: "Trained a multivariate LSTM neural network with an end-to-end preprocessing pipeline to accurately predict trends and inform analytics.",
     tech: ["TensorFlow", "Keras", "Scikit-learn", "LSTM"],
-    links: { github: "#", live: "#" },
+    links: { github: "https://github.com/chanaka-devx/Air-Quality-Prediction-System", live: "#" },
     dark: false
   },
   {
@@ -83,7 +83,7 @@ const projects = [
 
 export default function Projects() {
   const [showAll, setShowAll] = useState(false);
-  const displayedProjects = showAll ? projects : projects.slice(0, 2);
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
     <section id="projects" className="py-32 bg-background-light dark:bg-background-dark relative overflow-hidden flex flex-col items-center">
@@ -106,8 +106,8 @@ export default function Projects() {
           </h2>
         </motion.div>
 
-        {/* Masonry Layout Approximation using Columns */}
-        <div className="columns-1 md:columns-2 gap-8 space-y-8 min-h-[400px]">
+        {/* 3-Column Grid Layout matching Skills section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <AnimatePresence mode="popLayout">
             {displayedProjects.map((project, index) => (
               <motion.div 
@@ -122,7 +122,7 @@ export default function Projects() {
                   layout: { duration: 0.4 }
                 }}
                 key={project.title} 
-                className={`relative rounded-[40px] p-8 md:p-12 break-inside-avoid flex flex-col hover:-translate-y-2 transition-all duration-500
+                className={`relative rounded-[40px] p-8 md:p-12 flex flex-col hover:-translate-y-2 transition-all duration-500
                   ${project.dark 
                     ? 'bg-[#111111] text-white border border-white/10 shadow-2xl' 
                     : 'bg-white dark:bg-[#1a1a1a] text-[#111111] dark:text-white border border-black/10 dark:border-white/10 shadow-sm'
@@ -148,10 +148,6 @@ export default function Projects() {
                   <div className={`mt-auto pt-8 border-t flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6
                       ${project.dark ? 'border-white/10' : 'border-black/10 dark:border-white/10'}`}>
                       <div className="flex items-center gap-4">
-                          <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg
-                              ${project.dark ? 'bg-white text-black' : 'bg-black text-white dark:bg-white dark:text-black'}`}>
-                              {project.title.charAt(0)}
-                          </div>
                           <div>
                               <h3 className="text-lg font-bold">
                                   {project.title}
